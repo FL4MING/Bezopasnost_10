@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<form name="form" action="javascript:count()">
+		<input type="text" name="modul"> - Модуль
+		<br>
+		<input type="submit">
+	</form>
+<script type="text/javascript">
+	function count() {
+		var mas = [];
+		var a = document.form.modul.value;
+		for(var b = 0; b <a; b++){
+			if(module(a, b)){
+				mas.push(b);
+			}
+
+		}
+		var stepen = mas.length;
+		for(var g = 2; g < a; g++){
+			var result  = g ** stepen;
+			if(result > a){
+				if(result % a == 1){
+					alert("Результат: " + g);
+					document.form.modul.value = "";
+					break;
+				}
+			}
+			else{
+				if(result == 1){
+					alert("Результат: " + g);
+					document.form.modul.value = "";
+					break; 
+				}
+			}
+		}
+	}
+	
+	function module(a, b){
+		while(b){
+			num = a%b;
+			a = b; 
+			b = num;
+		}
+		if(Math.abs(a) == 1){
+			return true;
+		}
+	}
+</script>
+</body>
+</html>
